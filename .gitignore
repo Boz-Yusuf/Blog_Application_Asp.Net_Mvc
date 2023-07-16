@@ -361,3 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Blog.Presentation/wwwroot/assets/files/YusufBozCV.pdf
