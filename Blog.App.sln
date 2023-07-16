@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Repository", "Blog.Rep
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Service", "Blog.Service\Blog.Service.csproj", "{C5BBA03D-9304-4302-99D3-AB2CAB341694}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Cache", "Blog.Cache\Blog.Cache.csproj", "{C076FE07-D47F-4372-983D-79598C4BB021}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C5BBA03D-9304-4302-99D3-AB2CAB341694}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5BBA03D-9304-4302-99D3-AB2CAB341694}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5BBA03D-9304-4302-99D3-AB2CAB341694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C076FE07-D47F-4372-983D-79598C4BB021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C076FE07-D47F-4372-983D-79598C4BB021}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C076FE07-D47F-4372-983D-79598C4BB021}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C076FE07-D47F-4372-983D-79598C4BB021}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
