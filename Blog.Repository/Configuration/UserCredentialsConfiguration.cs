@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Blog.Repository.Configuration
 {
-    internal class UserCredentialsConfiguration : IEntityTypeConfiguration<UserCredentials>
+    public class UserCredentialsConfiguration : IEntityTypeConfiguration<UserCredentials>
     {
 
         public void Configure(EntityTypeBuilder<UserCredentials> builder)

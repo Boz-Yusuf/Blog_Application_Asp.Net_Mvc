@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Blog.Core.Entity;
 using System.Reflection;
+using Blog.Repository.Configuration;
 
 namespace Blog.Repository
 {
@@ -21,6 +22,13 @@ namespace Blog.Repository
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            //builder.ApplyConfiguration(new UserConfiguration());
+            //builder.ApplyConfiguration(new CommentConfiguration());
+            //builder.ApplyConfiguration(new BlogContentConfiguration());
+            //builder.ApplyConfiguration(new CategoryConfiguration());
+            //builder.ApplyConfiguration(new UserCredentialsConfiguration());
+
+
 
             base.OnModelCreating(builder);
         }

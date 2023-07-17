@@ -15,7 +15,7 @@ namespace Blog.Repository.Seeds
                     Email = "user1@gmail.com",
                     PasswordHashed = "password",
                     CreatedDate = DateTime.UtcNow,
-                    User = new User { Id = 1 ,UserName = "developer1"},
+                    UserId = 1,
                 },
                 new UserCredentials
                 {
@@ -23,7 +23,7 @@ namespace Blog.Repository.Seeds
                     Email = "user2@gmail.com",
                     PasswordHashed = "password",
                     CreatedDate = DateTime.UtcNow,
-                    User = new User { Id = 2, UserName = "developer2" },
+                    UserId = 2,
                 },
                 new UserCredentials
                 {
@@ -31,7 +31,7 @@ namespace Blog.Repository.Seeds
                     Email = "user3@gmail.com",
                     PasswordHashed = "password",
                     CreatedDate = DateTime.UtcNow,
-                    User = new User { Id = 3, UserName = "developer3" },
+                    UserId = 3,
                 });
         }
     }
