@@ -1,8 +1,10 @@
 using Blog.Core.Repositories;
+using Blog.Core.Service;
 using Blog.Core.UnitOfWorks;
 using Blog.Repository;
 using Blog.Repository.Repositories;
 using Blog.Repository.UnitOfWorks;
+using Blog.Service.Mapping;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -14,7 +16,10 @@ builder.Services.AddControllersWithViews();
 #region ORM Design Patterns
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositories<>));
+builder.Services.AddScoped(typeof(IService<>), typeof(GenericRepositories<>));
 #endregion
+
+builder.Services.AddAutoMapper(typeof(MapProfile));
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {

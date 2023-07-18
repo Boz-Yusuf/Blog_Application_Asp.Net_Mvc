@@ -1,0 +1,16 @@
+﻿using Blog.Core.Entity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Blog.Core.DTOs
+{
+    public class UserDto
+    {
+        public int Id { get; set; }
+        public string UserName { get; set; }
+        public int UserCredentialsId { get; set; }
+    }
+}
