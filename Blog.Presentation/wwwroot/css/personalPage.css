@@ -1,0 +1,115 @@
+﻿/*
+    || Table Of Content
+
+  1. Timeline 
+  2. Blog
+  3. Button
+
+*/
+
+
+
+/* || TIMELINE STYLES  */
+
+.timeline {
+    position: relative;
+}
+
+    .timeline .timeline-container {
+        padding-left: 50px;
+        margin-bottom: 50px;
+        position: relative;
+        background-color: inherit;
+        width: 100%;
+    }
+
+        .timeline .timeline-container:last-of-type {
+            margin-bottom: 0;
+        }
+
+    .timeline.edu .timeline-container::after {
+        content: "";
+        background: #FFF;
+        font-family: "simple-line-icons";
+        font-size: 24px;
+        color: #FF4C60;
+        position: absolute;
+        left: -7px;
+        top: 0;
+        z-index: 1;
+    }
+
+    .timeline.exp .timeline-container::after {
+        content: "";
+        background: #FFF;
+        font-family: "simple-line-icons";
+        font-size: 24px;
+        color: #FF4C60;
+        position: absolute;
+        left: -7px;
+        top: 0;
+        z-index: 1;
+    }
+
+    .timeline .content {
+        position: relative;
+    }
+
+        .timeline .content .time {
+            color: #8B88B1;
+            font-size: 14px;
+        }
+
+        .timeline .content h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .timeline .content p {
+            margin: 0;
+        }
+
+    .timeline span.line {
+        position: absolute;
+        width: 1px;
+        background-color: #FF4C60;
+        top: 30px;
+        bottom: 30px;
+        left: 34px;
+    }
+
+
+
+/* || BLOG STYLES */
+
+.blog-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* || BUTTONS STYLES  */
+
+.btn {
+    color: #FFF;
+    background-color: #FF4C60;
+    border-radius: 30px;
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    overflow: hidden;
+    line-height: 1;
+    padding: 12px 32px;
+}
+
+    .btn:hover {
+        color: #FFF;
+        background-color: #353353;
+    }
+
+    .btn:focus {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }

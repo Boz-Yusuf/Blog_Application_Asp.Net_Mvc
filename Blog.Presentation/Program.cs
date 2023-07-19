@@ -43,7 +43,11 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+
+
 app.UseRouting();
+
+
 
 app.UseAuthorization();
 
@@ -51,4 +55,35 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapAreaControllerRoute(
+           name: "Admin",
+           areaName: "Admin",
+           pattern: "Admin/{controller=Home}/{action=Index}"
+       );
+
+    endpoints.MapAreaControllerRoute(
+           name: "User",
+           areaName: "User",
+           pattern: "User/{controller=Home}/{action=Index}"
+       );
+
+    endpoints.MapAreaControllerRoute(
+       name: "Auth",
+       areaName: "Auth",
+       pattern: "Auth/{controller=Home}/{action=Index}"
+   );
+
+
+    endpoints.MapControllerRoute(
+        name: "Admin",
+        pattern: "Admin/{controller}/{action}"
+    );
+
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}"
+    );
+});
 app.Run();
