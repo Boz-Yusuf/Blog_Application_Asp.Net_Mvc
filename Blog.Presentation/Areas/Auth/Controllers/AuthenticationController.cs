@@ -37,6 +37,7 @@ namespace Blog.Presentation.Areas.Auth.Controllers
             {
                var principal =  _userCredentialsService.LogIn(LogIncredentialsDto);
                await HttpContext.SignInAsync(principal.CookieName, principal.ClaimsPrincipal);
+               return Redirect("/User/Blog");
             }
 
 
@@ -61,7 +62,7 @@ namespace Blog.Presentation.Areas.Auth.Controllers
 
 
             await _userCredentialsService.SignUpAsync(signUpCredentialsDto);
-            return View();
+            return Redirect("/Auth/Authentication/Login");
         }
 
         [HttpGet]
@@ -69,6 +70,15 @@ namespace Blog.Presentation.Areas.Auth.Controllers
         {
             return View();
         }
+
+
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync("MyCookieAuth");
+            return Redirect("/User/Blog");
+        }
+
 
 
 

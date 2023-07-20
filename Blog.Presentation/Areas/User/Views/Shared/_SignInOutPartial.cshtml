@@ -1,0 +1,12 @@
+﻿<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+@if (User.Identity.IsAuthenticated)
+{
+    <a class="btn btn-link pl-0" style="color:darkred" href="/Auth/Authentication/Logout">Logout</a>
+}
+else
+{
+    <a class="btn btn-link pl-0" href="/Auth/Authentication/Login" >Login</a>
+}

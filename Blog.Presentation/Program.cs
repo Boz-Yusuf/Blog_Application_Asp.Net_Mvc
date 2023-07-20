@@ -42,6 +42,12 @@ builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", opt
     opt.LoginPath = "/Auth/Authentication/AccessDenied";
 });
 
+builder.Services.AddAuthorization(opt =>
+{
+    opt.AddPolicy("Admin",
+        policy => policy.RequireClaim("Admin"));
+});
+
 
 var app = builder.Build();
 
