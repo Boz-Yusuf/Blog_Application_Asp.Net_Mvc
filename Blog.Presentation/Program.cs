@@ -5,6 +5,7 @@ using Blog.Repository;
 using Blog.Repository.Repositories;
 using Blog.Repository.UnitOfWorks;
 using Blog.Service.Mapping;
+using Blog.Service.Service;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -17,6 +18,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositories<>));
 builder.Services.AddScoped(typeof(IService<>), typeof(GenericRepositories<>));
+
+builder.Services.AddScoped<IUserCredentialsRepository, UserCredentialsRepository>();
+builder.Services.AddTransient<IUserCredentialsService, UserCredentialsService>();
+
 #endregion
 
 builder.Services.AddAutoMapper(typeof(MapProfile));

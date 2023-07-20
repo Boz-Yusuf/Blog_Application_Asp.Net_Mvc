@@ -18,6 +18,7 @@ namespace Blog.Service.Mapping
             CreateMap<Category, CategoryDto>().ReverseMap();
             CreateMap<User, UserDto>().ReverseMap();
             CreateMap<UserCredentials, UserCredentialsDto>().ReverseMap();
+            CreateMap<UserCredentials, SignUpCredentialsDto>().ReverseMap();
         }
     }
 }
