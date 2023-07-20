@@ -1,4 +1,5 @@
-﻿using Blog.Core.Entity;
+﻿using Blog.Core.DTOs;
+using Blog.Core.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace Blog.Core.Repositories
 {
     public interface IUserCredentialsRepository : IGenericRepository<UserCredentials>
     {
+        Task<bool> ValidateUserCredentials(LogInCredentialsDto logInCredentialsDto);
     }
 }

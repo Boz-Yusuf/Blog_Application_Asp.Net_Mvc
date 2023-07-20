@@ -1,7 +1,9 @@
 ﻿using Blog.Core.DTOs;
 using Blog.Core.Service;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
 
 namespace Blog.Presentation.Areas.Auth.Controllers
 {
@@ -22,10 +24,21 @@ namespace Blog.Presentation.Areas.Auth.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(LogInCredentialsDto credentialsDto)
+        public async Task<IActionResult>  Login(LogInCredentialsDto LogIncredentialsDto)
         {
             if (!ModelState.IsValid)
                 return View();
+
+            var result = await _userCredentialsService.ValidateUserCredentialsAsync(LogIncredentialsDto);
+
+            if (result == false)
+                ModelState.AddModelError("","User Not Found");
+            else
+            {
+               var principal =  _userCredentialsService.LogIn(LogIncredentialsDto);
+               await HttpContext.SignInAsync(principal.CookieName, principal.ClaimsPrincipal);
+            }
+
 
             return View();
         }
@@ -47,7 +60,7 @@ namespace Blog.Presentation.Areas.Auth.Controllers
                 return View();
 
 
-            await _userCredentialsService.SignUp(signUpCredentialsDto);
+            await _userCredentialsService.SignUpAsync(signUpCredentialsDto);
             return View();
         }
     }

@@ -35,6 +35,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 
+builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", opt =>
+{
+    opt.Cookie.Name = "MyCookieAuth";
+    opt.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -48,12 +55,10 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-
-
 app.UseRouting();
 
 
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
