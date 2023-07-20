@@ -63,5 +63,14 @@ namespace Blog.Presentation.Areas.Auth.Controllers
             await _userCredentialsService.SignUpAsync(signUpCredentialsDto);
             return View();
         }
+
+        [HttpGet]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
+
+
     }
 }
