@@ -20,16 +20,20 @@
             <div class="mb-4 row">
                 <input type="password" class="form-control" placeholder="Password" asp-for="@Model.Password">
                 <span></span>
-                <div class="row form-check pt-2 mb-2">
-                    <div class="">
+                <div class="d-flex justify-content-between pt-2 mb-2">
+                    <div>
                         <input type="checkbox">
-                        <label class="form-check-label">Remember Me</label>
+                        <label class="form-check-label">Keep me signed in</label>
+                    </div>
+                    <div>
+                        <p>Not Registered <a href="/Auth/Authentication/SignUp">Create an account</a></p>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <button type="submit" class="btn">Login</button>
             </div>
+     
         </form>
     </div>
 </div>
